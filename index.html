@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Test Page — ForaDaCerca</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            margin: 24px;
+            color: #222;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        #app > div {
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin-right: 8px;
+        }
+
+        #results {
+            margin-top: 12px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .ok {
+            color: #116611;
+        }
+
+        .fail {
+            color: #aa2222;
+        }
+
+        .summary {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quick Test Harness</h1>
+
+    <section id="app">
+        <div>
+            <button id="incrementBtn">Increment</button>
+            <span id="counter">0</span>
+        </div>
+
+        <div>
+            <input id="textInput" placeholder="Type 'ok' to pass validation" />
+            <button id="validateBtn">Validate</button>
+            <span id="validResult"></span>
+        </div>
+    </section>
+
+    <section id="tests">
+        <h2>Automated Tests</h2>
+        <button id="runTests">Run Tests</button>
+        <ul id="results" aria-live="polite"></ul>
+    </section>
+
+    <script>// Minimal app behavior
+    const counterEl = document.getElementById('counter');
+    let counter = 0;
+    document.getElementById('incrementBtn').addEventListener('click', () => {
+      counter++;
+      counterEl.textContent = String(counter);
+    });
+
+    document.getElementById('validateBtn').addEventListener('click', () => {
+      const val = document.getElementById('textInput').value.trim();
+      document.getElementById('validResult').textContent = val === 'ok' ? 'Valid' : 'Invalid';
+    });
+
+    // Tiny assertion helpers and test runner
+    function assertEquals(actual, expected, message) {
+      if (actual !== expected) throw new Error(message + ' — expected: ' + expected + ', got: ' + actual);
+    }
+    function assertTrue(value, message) {
+      if (!value) throw new Error(message);
+    }
+
+    function runTests() {
+      const results = document.getElementById('results');
+      results.innerHTML = '';
+      let passed = 0, failed = 0;
+
+      function record(name, fn) {
+        const li = document.createElement('li');
+        try {
+          fn();
+          li.textContent = '✔ ' + name;
+          li.className = 'ok';
+          passed++;
+        } catch (err) {
+          li.textContent = '✖ ' + name + ': ' + err.message;
+          li.className = 'fail';
+          failed++;
+        }
+        results.appendChild(li);
+      }
+
+      record('DOM elements exist', () => {
+        assertTrue(!!document.getElementById('incrementBtn'), 'incrementBtn missing');
+        assertTrue(!!document.getElementById('counter'), 'counter missing');
+        assertTrue(!!document.getElementById('textInput'), 'textInput missing');
+        assertTrue(!!document.getElementById('validateBtn'), 'validateBtn missing');
+      });
+
+      record('Counter increments when button clicked', () => {
+        // reset
+        counter = 0;
+        counterEl.textContent = '0';
+        const btn = document.getElementById('incrementBtn');
+        btn.click();
+        assertEquals(counterEl.textContent, '1', 'counter did not increment to 1');
+        btn.click();
+        assertEquals(counterEl.textContent, '2', 'counter did not increment to 2');
+      });
+
+      record('Validation returns "Valid" for input "ok"', () => {
+        const input = document.getElementById('textInput');
+        input.value = 'ok';
+        document.getElementById('validateBtn').click();
+        assertEquals(document.getElementById('validResult').textContent, 'Valid', 'validation failed for "ok"');
+      });
+
+      const summary = document.createElement('div');
+      summary.className = 'summary';
+      summary.textContent = passed + ' passed, ' + failed + ' failed';
+      results.appendChild(summary);
+    }
+
+    document.getElementById('runTests').addEventListener('click', runTests);</script>
+</body>
+</html>
