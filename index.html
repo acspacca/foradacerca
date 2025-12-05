@@ -1,144 +1,147 @@
-ï»¿<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Test Page â€” ForaDaCerca</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            margin: 24px;
-            color: #222;
-        }
-
-        h1 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
-
-        #app > div {
-            margin: 8px 0;
-        }
-
-        button {
-            padding: 6px 10px;
-            margin-right: 8px;
-        }
-
-        #results {
-            margin-top: 12px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .ok {
-            color: #116611;
-        }
-
-        .fail {
-            color: #aa2222;
-        }
-
-        .summary {
-            margin-top: 10px;
-            font-weight: 600;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A. C. SPACCA</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Quick Test Harness</h1>
 
-    <section id="app">
-        <div>
-            <button id="incrementBtn">Increment</button>
-            <span id="counter">0</span>
-        </div>
+    <canvas id="starfield"></canvas>
 
-        <div>
-            <input id="textInput" placeholder="Type 'ok' to pass validation" />
-            <button id="validateBtn">Validate</button>
-            <span id="validResult"></span>
-        </div>
-    </section>
+    <header>
+        <h1>A. C. SPACCA</h1>
+    </header>
 
-    <section id="tests">
-        <h2>Automated Tests</h2>
-        <button id="runTests">Run Tests</button>
-        <ul id="results" aria-live="polite"></ul>
-    </section>
+    <!-- Content Panels -->
+    <div class="items-container">
 
-    <script>// Minimal app behavior
-    const counterEl = document.getElementById('counter');
-    let counter = 0;
-    document.getElementById('incrementBtn').addEventListener('click', () => {
-      counter++;
-      counterEl.textContent = String(counter);
-    });
+        <!-- Item 1 -->
+        <section class="item-section">
+            <div class="item-cover">
+                <figure>
+                    <img src="images/foradacerca.jpg" alt="FORA DA CERCA">
+                    <figcaption class="image-credit">ESTRANHO E ASSUSTADOR</figcaption>
+                </figure>
+            </div>
+            <div class="item-content">
+                <h2>FORA <small>DA</small> CERCA</h2>
+                <h3><big>Sete Contos da Roça</big></h3>
+                <p class="fixedBox">
+                    Sete contos arrepiantes contadas de sete formas diferentes, todos cheios de aventuras, mistérios e surpresas.
+                    Mas cada deixando aquele desejo de ter mais. <br />
+                    <br />
+                    Uma coleção que não será somente lida e relida, mas também contada onde houver oportunidade. <br />
+                    <br />
+                    Personagens inesquesiveis em acontecimentos estranhos e assustadores. <br />
+                    <br />
+                    É como diria nossa narradora: <br />
+                    <br />
+                    "É pra rir e é pra chorar, é pra sentir medo, e é pra se espantar, mas fora da cerca, é mesmo para se esbaldar!".
+                </p><br />
+                <div class="purchase-row">
+                    <span class="price-tag">R$ 49,90 + Frete / R$ 19,90 PDF</span>
+                    <a href="#buy1" class="cta-button">Buy Now</a>
+                </div>
+            </div>
+        </section>
 
-    document.getElementById('validateBtn').addEventListener('click', () => {
-      const val = document.getElementById('textInput').value.trim();
-      document.getElementById('validResult').textContent = val === 'ok' ? 'Valid' : 'Invalid';
-    });
+        <!-- Item 2 -->
+        <section class="item-section">
+            <div class="item-cover">
+                <figure>
+                    <img src="images/ofuturomudou.jpg" alt="O FUTURO MUDOU">
+                    <figcaption class="image-credit">INTRIGANTE E MISTERIOSO</figcaption>
+                </figure>
+            </div>
+            <div class="item-content">
+                <h2><small>O FUTURO MUDOU</small></h2>
+                <h3>Revelações da Inteligência Artificial</h3>
+                <p class="fixedBox">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc vel tincidunt
+                    facilisis. Praesent euismod nisl sit amet fermentum. Donec vel sapien a libero fermentum
+                    tincidunt. Integer vitae justo nec nulla facilisis tincidunt.<br />
+                    <br />
+                    Curabitur euismod nisl sit amet fermentum. Integer vitae justo nec nulla facilisis tincidunt.<br />
+                    <br />
+                    An epic tale of adventure and resilience, taking readers across uncharted lands and new worlds.
+                    This description demonstrates how text wraps naturally around the image.
+                </p><br />
+                <div class="purchase-row">
+                    <span class="price-tag">R$ 49,90 + Frete</span>
+                    <a href="#buy1" class="cta-button">Buy Now</a>
+                </div>
+            </div>
+        </section>
 
-    // Tiny assertion helpers and test runner
-    function assertEquals(actual, expected, message) {
-      if (actual !== expected) throw new Error(message + ' â€” expected: ' + expected + ', got: ' + actual);
-    }
-    function assertTrue(value, message) {
-      if (!value) throw new Error(message);
-    }
+        <!-- Item 3 -->
+        <section class="item-section center">
+        </section>
 
-    function runTests() {
-      const results = document.getElementById('results');
-      results.innerHTML = '';
-      let passed = 0, failed = 0;
+        <!-- Item 4 -->
+        <section class="item-section">
+        </section>
 
-      function record(name, fn) {
-        const li = document.createElement('li');
-        try {
-          fn();
-          li.textContent = 'âœ” ' + name;
-          li.className = 'ok';
-          passed++;
-        } catch (err) {
-          li.textContent = 'âœ– ' + name + ': ' + err.message;
-          li.className = 'fail';
-          failed++;
+        <!-- Item 5 -->
+        <section class="item-section">
+        </section>
+
+    </div>
+
+    <!-- Footer with Site Map -->
+    <footer>
+        <ul class="site-map">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#books">Fora da Cerca</a></li>
+            <li><a href="#books">O Futuro Mudou</a></li>
+            <li><a href="#books">Pin-Tables</a></li>
+            <li><a href="#books">Ion-Alien</a></li>
+            <li><a href="#books">DragonVape</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </footer>
+
+    <script>
+
+        const canvas = document.getElementById("starfield");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const stars = Array.from({ length: 100 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2
+        }));
+
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+                ctx.fillStyle = "white";
+                ctx.fill();
+            });
         }
-        results.appendChild(li);
-      }
 
-      record('DOM elements exist', () => {
-        assertTrue(!!document.getElementById('incrementBtn'), 'incrementBtn missing');
-        assertTrue(!!document.getElementById('counter'), 'counter missing');
-        assertTrue(!!document.getElementById('textInput'), 'textInput missing');
-        assertTrue(!!document.getElementById('validateBtn'), 'validateBtn missing');
-      });
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".item-section");
 
-      record('Counter increments when button clicked', () => {
-        // reset
-        counter = 0;
-        counterEl.textContent = '0';
-        const btn = document.getElementById('incrementBtn');
-        btn.click();
-        assertEquals(counterEl.textContent, '1', 'counter did not increment to 1');
-        btn.click();
-        assertEquals(counterEl.textContent, '2', 'counter did not increment to 2');
-      });
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.2 });
 
-      record('Validation returns "Valid" for input "ok"', () => {
-        const input = document.getElementById('textInput');
-        input.value = 'ok';
-        document.getElementById('validateBtn').click();
-        assertEquals(document.getElementById('validResult').textContent, 'Valid', 'validation failed for "ok"');
-      });
+            sections.forEach(section => observer.observe(section));
+        });
 
-      const summary = document.createElement('div');
-      summary.className = 'summary';
-      summary.textContent = passed + ' passed, ' + failed + ' failed';
-      results.appendChild(summary);
-    }
+        setInterval(drawStars, 100);
 
-    document.getElementById('runTests').addEventListener('click', runTests);</script>
+    </script>
+
 </body>
 </html>
