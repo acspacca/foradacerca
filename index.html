@@ -1,147 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A. C. SPACCA</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FORA DA CERCA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="crosswords.css">
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"
+  integrity="sha256-J8ay84czFazJ9wcTuSDLpPmwpMXOm573OUtZHPQqpEU="
+  crossorigin="anonymous"></script>
+
 </head>
-<body>
-
-    <canvas id="starfield"></canvas>
-
-    <header>
-        <h1>A. C. SPACCA</h1>
-    </header>
-
-    <!-- Content Panels -->
-    <div class="items-container">
-
-        <!-- Item 1 -->
-        <section class="item-section">
-            <div class="item-cover">
-                <figure>
-                    <img src="images/foradacerca.jpg" alt="FORA DA CERCA">
-                    <figcaption class="image-credit">ESTRANHO E ASSUSTADOR</figcaption>
-                </figure>
+<body class="no-js">
+  <main class="cover" role="main">
+    
+    <div class="container" style="max-width:1000px; margin:0; gap: 20px; text-align: left;">
+        <div>
+            <img id="paletteImage" src="images/foradacerca.jpg" alt="Fora Da Cerca" style="max-width:300px;">
+        </div>
+        <div>
+            <h1 id="title">FORA <small>DA</small> CERCA</h1>
+            <div style="max-width:600px;">
+                <h2 id="subtitle" class="subtitle">Sete Contos da Roça</h2><br/><br/>
+                <p>Sete contos arrepiantes contadas de sete formas diferentes, todos cheios de aventuras, mistérios e surpresas. Mas cada deixando aquele desejo de ter mais.</p><br/>
+                <p>Uma coleção que não será somente lida e relida, mas também contada onde houver oportunidade.</p><br/>
+                <p>Personagens inesquesiveis em acontecimentos estranhos e assustadores.</p><br/>
+                <p>É como diria nossa narradora:</p><br/><br/>
+                <i>"É pra rir e é pra chorar, é pra sentir medo, e é pra se espantar, mas fora da cerca, é mesmo para se esbaldar!".</i><br/>
             </div>
-            <div class="item-content">
-                <h2>FORA <small>DA</small> CERCA</h2>
-                <h3><big>Sete Contos da Roça</big></h3>
-                <p class="fixedBox">
-                    Sete contos arrepiantes contadas de sete formas diferentes, todos cheios de aventuras, mistérios e surpresas.
-                    Mas cada deixando aquele desejo de ter mais. <br />
-                    <br />
-                    Uma coleção que não será somente lida e relida, mas também contada onde houver oportunidade. <br />
-                    <br />
-                    Personagens inesquesiveis em acontecimentos estranhos e assustadores. <br />
-                    <br />
-                    É como diria nossa narradora: <br />
-                    <br />
-                    "É pra rir e é pra chorar, é pra sentir medo, e é pra se espantar, mas fora da cerca, é mesmo para se esbaldar!".
-                </p><br />
-                <div class="purchase-row">
-                    <span class="price-tag">R$ 49,90 + Frete / R$ 24,99 PDF</span>
-                    <a href="#buy1" class="cta-button">Buy Now</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Item 2 -->
-        <section class="item-section">
-            <div class="item-cover">
-                <figure>
-                    <img src="images/ofuturomudou.jpg" alt="O FUTURO MUDOU">
-                    <figcaption class="image-credit">INTRIGANTE E MISTERIOSO</figcaption>
-                </figure>
-            </div>
-            <div class="item-content">
-                <h2><small>xxx</small></h2>
-                <h3>Revelações da Inteligência Artificial</h3>
-                <p class="fixedBox">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc vel tincidunt
-                    facilisis. Praesent euismod nisl sit amet fermentum. Donec vel sapien a libero fermentum
-                    tincidunt. Integer vitae justo nec nulla facilisis tincidunt.<br />
-                    <br />
-                    Curabitur euismod nisl sit amet fermentum. Integer vitae justo nec nulla facilisis tincidunt.<br />
-                    <br />
-                    An epic tale of adventure and resilience, taking readers across uncharted lands and new worlds.
-                    This description demonstrates how text wraps naturally around the image.
-                </p><br />
-                <div class="purchase-row">
-                    <span class="price-tag">R$ 49,90 + Frete</span>
-                    <a href="#buy1" class="cta-button">Buy Now</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Item 3 -->
-        <section class="item-section center">
-        </section>
-
-        <!-- Item 4 -->
-        <section class="item-section">
-        </section>
-
-        <!-- Item 5 -->
-        <section class="item-section">
-        </section>
-
+        </div>
     </div>
 
-    <!-- Footer with Site Map -->
-    <footer>
-        <ul class="site-map">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#books">Fora da Cerca</a></li>
-            <li><a href="#books">O Futuro Mudou</a></li>
-            <li><a href="#books">Pin-Tables</a></li>
-            <li><a href="#books">Ion-Alien</a></li>
-            <li><a href="#books">DragonVape</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </footer>
+    <br/>
 
-    <script>
+    <div class="container" style="max-width:1000px; margin:0;">
+        <h3>Além da leitura dos contos, o livro "FORA DA CERCA" oferece atividades complementares que enriquecem a experiência do leitor. Essas atividades incluem:</h3>
+    </div>
 
-        const canvas = document.getElementById("starfield");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    <br/>
 
-        const stars = Array.from({ length: 100 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 2
-        }));
+    <div class="container" style="max-width:1000px; margin:0; gap: 10px; background-color:silver;opacity: 0.8;">
+        <div>
+            <table id="crosswords"></table>
+        </div>
+        <div style="padding:10px;color: black; text-align: left;">
+            <h2>PALAVRAS CRUZADAS</h2><br/>
+            <h4>VERTICAL</h4><br/>
+            <div id="vertical_questions"></div><br/>
+            <h4>HORIZONTAL</h4><br/>
+            <div id="horizontal_questions"></div><br/>
+        </div>
+    </div>
 
-        function drawStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(star => {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-                ctx.fillStyle = "white";
-                ctx.fill();
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll(".item-section");
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("fade-in");
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            sections.forEach(section => observer.observe(section));
-        });
-
-        setInterval(drawStars, 100);
-
-    </script>
-
+</main>
+  <script src="backdrop.js" defer></script>
+  <script src="crosswords.js" defer></script>
 </body>
 </html>
