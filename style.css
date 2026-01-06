@@ -50,6 +50,17 @@
         flex-direction: row;   /* Default: side by side */
     }
 
+    .activity{
+        max-width: 1000px; 
+        margin: 0; 
+        gap: 15px; 
+        background-color: silver;
+        opacity: 0.8;
+        padding: 20px;
+        color: black; 
+        text-align: left;
+    }
+
     /* Mobile-friendly adjustment */
     @media (max-width: 600px) {
         .container {
