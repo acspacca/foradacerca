@@ -1,42 +1,17 @@
-var horizontal_questions = $('<div></div>');
-var vertical_questions = $('<div></div>');
-
-var grid = [['0,0',	'0,0', '0,0', '0,0', '1,0', '0,0', '0,0', '0,0', '0,0', '0,0'],
-			['0,0', '0,0', '0,0', '0,0', '1,0', '0,0', '0,0', '0,0', '0,0', '0,0'],
-			['0,0', '0,0', '0,0', '0,0', '1,0', '0,0', '2,0', '0,0', '0,0', '0,0'],
-			['0,0', '3,0', '3,0', '3,0', '3,1', '3,0', '3,2', '3,0', '3,0', '3,4'],
-			['0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '2,0', '0,0', '0,0', '4,0'],
-			['0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '2,0', '0,0', '0,0', '4,0'],
-			['0,0', '0,0', '5,0', '5,0', '5,0', '5,0', '2,5', '5,0', '0,0', '4,0'],
-			['0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '2,0', '0,0', '0,0', '4,0'],
-			['0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '2,0', '0,0', '0,0', '0,0'],
-			['6,0', '6,0', '6,0', '6,0', '6,0', '6,0', '2,6', '0,0', '0,0', '0,0'],
-			['0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '2,0', '0,0', '0,0', '0,0']
+var grid = [['0,0',	'1,0', '1,0', '1,0', '1,0', '1,0', '1,0', '0,0', '0,0', '0,10'],
+			['0,0', '1,1', '0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '0,10'],
+			['0,0', '1,1', '0,0', '0,3', '0,0', '0,0', '0,0', '7,0', '0,0', '0,10'],
+			['2,0', '2,1', '2,0', '2,3', '2,0', '0,0', '0,9', '7,9', '0,9', '10,9'],
+			['2,0', '0,0', '0,0', '0,3', '0,0', '0,0', '0,0', '7,0', '0,0', '0,10'],
+			['2,4', '4,0', '4,0', '4,3', '4,0', '4,0', '0,0', '7,0', '0,0', '0,0'],
+			['2,0', '0,0', '0,0', '0,3', '0,0', '0,0', '0,0', '7,0', '0,0', '0,8'],
+			['2,0', '0,0', '5,0', '5,3', '5,0', '5,0', '5,0', '5,7', '5,0', '5,8'],
+			['2,0', '0,0', '0,0', '0,3', '0,0', '0,0', '0,0', '0,0', '0,0', '0,8'],
+			['0,0', '0,0', '6,0', '6,3', '6,0', '6,0', '6,0', '0,0', '0,0', '0,8'],
+			['0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '0,0', '0,0']
         ];
 
-var questions = [
-                "Para que Mari e Jeru trabalharam a semana toda?", 
-                "Jesibel se apovara quando vê?", 
-                "O que o caipira do espaço e Timi tem em comum?", 
-                "Além de ladrão Zez também é?", 
-                "O que encanta o menino ruaceiro?", 
-                "Não é comum, mas nessa mata tem?", 
-                "O que é bom para te um momento de paz", 
-                "Quando em casa como o ruaceiro escapa", 
-                "O que a velha usa além de pedras?"
-            ];
-
-var answers = [
-                "FESTA", 
-                "BURACO", 
-                "NAVE", 
-                "SABUGO", 
-                "FRUTA", 
-                "PIRAMIDE", 
-                "ASSADO", 
-                "SONHO", 
-                "SOMBRA"
-            ];
+var lit_cells = [[0,5],[0,9],[3,9],[4,3],[9,5]];
 
 $.each(grid, function(i){
 
@@ -71,27 +46,15 @@ $.each(grid, function(i){
                 question_number_span = '<span class="question_number">' + starting_number.replace(",", "") + '</span>';   
             }
             
-            $(row).append('<td>' + question_number_span + '<div class="letter square" data-number="' + this + '" contenteditable="true"></div></td>'); 
+            if(lit_cells.some(cell => cell[0] === i && cell[1] === j)){
+                $(row).append('<td>' + question_number_span + '<div class="light letter square" data-number="' + this + '" contenteditable="true"></div></td>'); 
+            } else {  
+                $(row).append('<td>' + question_number_span + '<div class="letter square" data-number="' + this + '" contenteditable="true"></div></td>'); 
+            }
         }
     });
     $("#crosswords").append(row);
 });
-
-$.each(questions, function(index){
-  
-    var direction = get_direction(index + 1);
-    
-    if(direction == "horizontal"){
-        $(horizontal_questions).append('<div>' + (index + 1) + ' - '+ questions[index] + '</div>');
-    }
-    else if(direction == "vertical"){
-    	$(vertical_questions).append('<div>' + (index + 1) + ' - '+ questions[index] + '</div>');
-    }
-    
-});
-
-$("#vertical_questions").append(vertical_questions);
-$("#horizontal_questions").append(horizontal_questions);
 
 function get_direction(question_number){
     for(var i = 0; i < grid.length; i++){
