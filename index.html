@@ -7,53 +7,47 @@
   <title>FORA DA CERCA</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="puzzles.css">
-
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-
-  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"
-    integrity="sha256-J8ay84czFazJ9wcTuSDLpPmwpMXOm573OUtZHPQqpEU=" crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js" integrity="sha256-J8ay84czFazJ9wcTuSDLpPmwpMXOm573OUtZHPQqpEU=" crossorigin="anonymous"></script>
 </head>
 
 <body class="no-js">
+
   <main class="cover" role="main">
 
+    <!-- BOOK DESCRIPTION -->
     <div class="container" style="max-width:1000px; margin:0; gap: 20px;">
       <div>
         <img id="paletteImage" src="images/foradacerca.jpg" alt="Fora Da Cerca" style="max-width:300px;">
       </div>
-      <div style="text-align: left;">
-        <h1 id="title">FORA <small>DA</small> CERCA</h1>
-        <div style="max-width:600px;">
-          <h2>Sete Contos da Roça</h2><br /><br />
-          <p>Sete contos arrepiantes contadas de sete formas diferentes, todos cheios de aventuras, mistérios e
-            surpresas. Mas cada deixando aquele desejo de ter mais.</p><br />
+      <div>
+        <h1>FORA <small>DA</small> CERCA</h1>
+        <h3>Sete Contos da Roça</h3><br /><br />
+        <div style="max-width:600px;font-size: large;text-align: left;">
+          <p>Sete contos arrepiantes contadas de sete formas diferentes, todos cheios de aventuras, mistérios e surpresas. Mas cada deixando aquele desejo de ter mais.</p><br />
           <p>Uma coleção que não será somente lida e relida, mas também contada onde houver oportunidade.</p><br />
-          <p>Personagens inesquesiveis em acontecimentos estranhos e assustadores.</p><br />
-          <p>É como diria nossa narradora:</p><br /><br />
-          <i>"É pra rir e é pra chorar, é pra sentir medo, e é pra se espantar, mas fora da cerca, é mesmo para se
-            esbaldar!".</i><br />
+          <p>Personagens inesquesiveis em acontecimentos estranhos e assustadores.</p><br /><br />
+          <p>É como diria nossa narradora:</p><br />
+          <i>"É pra rir e é pra chorar, é pra sentir medo, e é pra se espantar, mas fora da cerca, é mesmo para se esbaldar!".</i><br />
         </div>
       </div>
-    </div>
+    </div><br />
 
-    <br />
+    <!-- ACTIVITIES HEADER -->
+    <div class="container" style="margin:0; display: ruby-text;color: rgb(211, 255, 129);">
+      <h3 style="font-weight: 100;">Além de leitura, FORA <small>DA</small> CERCA... têm Atividades e BRINDES!</h3>
+    </div><br />
 
-    <div class="container" style="max-width:1000px; margin:0; display: ruby-text;">
-      <h3>Além da leitura, FORA <small>DA</small> CERCA... têm Atividades e BRINDES!</h3>
-    </div>
-
-    <br />
-
+    <!-- PALAVRAS CRUZADAS -->
     <div class="activity container">
       <div>
+        <h2>PALAVRAS CRUZADAS</h2><br />
         <table id="crosswords"></table>
       </div>
-      <div style="width: 350px;">
-        <h2>PALAVRAS CRUZADAS</h2><br />
+      <div>
+        <h2 class="spacer">&nbsp;<br /><br /></h2>
         <h4>VERTICAL</h4>
-        <div id="vertical_questions">
+        <div>
           <p>1 - Os alienigenas no interior roubam...</p>
           <p>2 - Além de ladrão o Zez tembém é...</p>
           <p>3 - Não é comum, mas na mata também tem...</p>
@@ -61,6 +55,7 @@
           <p>8 - A velha se esconde e...</p>
           <p>10 - No interior o sono é perturbado por...</p>
         </div><br />
+        <div>
         <h4>HORIZONTAL</h4>
         <p>1 - O caipira deixa sua terra para...</p>
         <p>2 - Denis, com sua Kombi cheia, não é...</p>
@@ -68,27 +63,19 @@
         <p>5 - Por baixo da terra tem um grande...</p>
         <p>6 - Mari e Jeru trabalhou a semana toda para...</p>
         <p>9 - Jesibel achou uma casca de coco e...</p>
-        <div id="horizontal_questions"></div><br />
-      </div>
-      <div style="width: 250px;">Instruções:<br /><br />
-        Complete os três quebra cabeças para descobrir todas as letras chaves,
-        quando terminar, descubra a palavra secreta formada por elas!<br /><br />
-        Se você comprou o livo no mercado livre com seu cpf, e fornecer a fraze secreta
-        correta, você ganhará um brinde exclusivo do author!<br /><br />
-        Somente um cpf pode receber um brinde e deve constar na nota fiscal da compra do livro.<br /><br />
-        Quando completo aguarde contato do author para o envio do brinde.
+        </div><br />
       </div>
     </div>
 
+    <!-- CAÇA PALAVRAS -->
     <div class="activity container">
       <div>
+        <h2>CAÇA PALAVRAS</h2><br />
         <table id="wordhunt" style="width:320px"></table>
       </div>
-      <div style="width: 350px;">
-        <h2>CAÇA PALAVRAS</h2><br />
+      <div>
+        <h2 class="spacer">&nbsp;<br /><br /></h2>
         <table>
-          <tr>
-          <td><table>
           <tr>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="false">I</div></td>
@@ -100,6 +87,7 @@
             <td><div class="letter square" contenteditable="true"></div></td>
           </tr>
           <tr>
+            <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
@@ -161,76 +149,75 @@
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
           </tr>
-          </table></td>
-          <td><table>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="light letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="false">A</div></td>
-          </tr>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="false">L</div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-          </tr>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="false">O</div></td>
-          </tr>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true">A</div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="light letter square" contenteditable="true"></div></td>
-          </tr>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="false">I</div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-          </tr>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="false">A</div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="light letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-          </tr>
-          <tr>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="light letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="false">A</div></td>
-          </tr>
-          <tr><td colspan="12"><div class="square" style="width:100%;background-color: transparent;" contenteditable="false"><small>Encontre a combinação de todas as palavras e identifique a palavra escondida.</small></div></td></tr>
-          </table></td>
-          </tr>
         </table>
       </div>
-      <div style="width: 250px;">
+      <div>
+        <h2 class="spacer">&nbsp;<br /><br /></h2>
+        <table>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="light letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="false">A</div></td>
+            </tr>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="false">L</div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+            </tr>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="false">O</div></td>
+            </tr>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true">A</div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="light letter square" contenteditable="true"></div></td>
+            </tr>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="false">I</div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+            </tr>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="false">A</div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="light letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+            </tr>
+            <tr>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="light letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="true"></div></td>
+              <td><div class="letter square" contenteditable="false">A</div></td>
+            </tr>          
+        </table>
       </div>
     </div>
 
+    <!-- PALAVRAS ENIGMAS -->
     <div class="activity container">
        <div>
-          <h3 style="margin: -20px 0px 20px 20px; text-emphasis-style: '❤️'; text-decoration-line: underline;">QUAZE LÁ!!</h3>
-          <table>
+        <h2>PALAVRAS ENIGMAS</h2><br />
+        <table>
           <tr>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
@@ -263,7 +250,8 @@
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
-            <td colspan="8">&nbsp;TMAGALA</td>
+            <td><div class="letter square" contenteditable="true"></div></td>
+            <td colspan="0">&nbsp;TMAGALA</td>
           </tr>
           <tr>
             <td><div class="letter square" contenteditable="true"></div></td>
@@ -272,8 +260,7 @@
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="true"></div></td>
-            <td colspan="0">&nbsp;AZUSNIB</td>
+            <td colspan="8">&nbsp;AZUSNIB</td>
           </tr>
           <tr>
             <td><div class="letter square" contenteditable="true"></div></td>
@@ -290,14 +277,14 @@
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="light letter square" contenteditable="true"></div></td>
-            <td><div class="letter square" contenteditable="treu"></div></td>
+            <td><div class="letter square" contenteditable="true"></div></td>
             <td colspan="8">&nbsp;RATORT</td>
           </tr>
-          </table>
+        </table>
       </div>
       <div>
-          <h2>PALAVRAS ENIGMAS</h2><br />
-          <table>
+        <h2 class="spacer">&nbsp;<br /><br /></h2>
+        <table>
           <tr>
             <td><div class="letter square" contenteditable="true"></div></td>
             <td><div class="letter square" contenteditable="true"></div></td>
@@ -347,13 +334,14 @@
             <td><div class="letter square" contenteditable="true"></div></td>
             <td colspan="8">&nbsp;VASHCU</td>
           </tr>
-          </table>
+        </table>
       </div>
-      <div>
-        <img src="images/caipira.png" alt="Caipira" style="max-width:180px; margin:-10px 20px;">
+      <div style="width: auto;align-self: center;">
+        <img src="images/caipira.png" alt="Caipira" style="max-width:180px;">
       </div>
     </div>
 
+    <!-- INSTRUÇÕES -->
     <div class="activity container" style="text-align: center;">
         <h3>INSTRUÇÕES PARA RECEBER SEU BRINDE</h3><br />
         <p>1 - Complete todas as atividades de todos os quebra cabeças acima.</p><br />
@@ -361,27 +349,92 @@
         <p>3 - Se comprou o livro no mercado livre, preencha e envie os dados abaixo.</p><br />
     </div>
 
+    <!-- FORMULÁRIO -->
     <div class="activity container">
-      <div style="width: 100%; justify-items: center;text-align: center;">
+      <div style="width: 100%;justify-items: center;text-align: center;">
+        <form id="contactForm" style="justify-items: center;text-align: center;">
           <table>
             <tr>
               <td>Nome:&nbsp;</td>
-              <td><input type="text" id="fullName" style="width:250px;">&nbsp;</td>
-              <td>CPF:&nbsp;</td>
-              <td><input type="text" id="cpf" style="width:150px;">&nbsp;</td>
-              <td>Frase:&nbsp;</td>
-              <td><input type="text" id="secretPhrase" style="width:300px;"></td>
-              <td>&nbsp;<button id="submitButton">Enviar</button></td>
+              <td><input type="text" id="name" style="width:250px;font-size: medium;padding: 2px;text-transform: capitalize;">&nbsp;</td>
             </tr>
-          </table><br />
-          <h3>QUALQUER PALAVRA ERRADA OU FALTANDO DESQUALIFICA ELIGIBILIDADE</h3>
+          </table>
+          <table>
+            <tr>
+              <td>CPF:&nbsp;</td>
+              <td><input type="text" id="userid" style="width:150px;font-size: medium;padding: 2px;">&nbsp;</td>
+          </table>
+          <table>
+            <tr>
+              <td>Frase:&nbsp;</td>
+              <td><input type="text" id="frase" style="width:300px;font-size: medium;padding: 2px;text-transform: capitalize;"></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td colspan="2">
+                <button type="submit" style="padding: 5px 10px 5px 10px;">Enviar</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+        <br />
+        <h3>QUALQUER LETRA ERRADA OU FALTANDO DESQUALIFICA ENVIO</h3>
       </div>
     </div>
 
   </main>
+
   <script src="backdrop.js" defer></script>
   <script src="crosswords.js" defer></script>
   <script src="wordhunt.js" defer></script>
+  <script src="puzzles.js" defer></script>
+
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script type="module">
+
+    // Import Firebase modules directly
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyA_UQmf-M0WYEzxBThlHtjDI-ngc7K8Oi4",
+        authDomain: "acspacca-github-data.firebaseapp.com",
+        projectId: "acspacca-github-data",
+        storageBucket: "acspacca-github-data.firebasestorage.app",
+        messagingSenderId: "876186980850",
+        appId: "1:876186980850:web:759a5b5c60d6fffa88db6b"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Handle form submission
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        try {
+            var allDivText = "";
+            $(".square").each(function() { allDivText += $(this).text(); });
+            await addDoc(collection(db, "cercado"), {
+                name: document.getElementById("name").value.toUpperCase(),
+                userid: document.getElementById("userid").value,
+                frase: document.getElementById("frase").value.toUpperCase(),
+                content: $.trim(allDivText).toUpperCase(),
+                timestamp: new Date().toString("yyyy-MM-dd HH:mm:ss")
+            }).then((docRef) => {
+                alert("Form submitted successfully!");
+                form.reset();
+            });
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("Something went wrong. Please try again later.");
+        }
+    });
+  </script>
+
 </body>
 
 </html>

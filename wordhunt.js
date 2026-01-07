@@ -14,7 +14,7 @@ var whgrid = [
 for(var i = 0; i < 10; i++) {
     var whrow = $('<tr></tr>');
     for(var j = 0; j < 10; j++) {
-        var cell = $("<td class='letter square'>" + whgrid[i][j] + "</td>");
+        var cell = $("<td class='letter dudsquare'>" + whgrid[i][j] + "</td>");
         whrow.append(cell);
     }
     $("#wordhunt").append(whrow);
