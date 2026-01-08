@@ -1,73 +1,119 @@
-    :root{
-    --bg1: #2f1d12; /* fallback */
-    --bg2: #8b5e3c; /* fallback */
-    --accent: #7a3b20;
-    --text: #fff;
-    --r: 48; --g:34; --b:21; /* numeric channels for glow */
+    :root {
+        --bg1: #2f1d12;
+        /* fallback */
+        --bg2: #8b5e3c;
+        /* fallback */
+        --accent: #7a3b20;
+        --text: #fff;
+        --r: 48;
+        --g: 34;
+        --b: 21;
+        /* numeric channels for glow */
     }
 
-    *{
-        box-sizing:border-box;
-        margin:0;
-        padding:0
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0
     }
 
-    body{
+    body {
         font-family: Georgia, 'Times New Roman', serif;
-        background: linear-gradient(135deg,var(--bg1),var(--bg2));
-        color:var(--text);
+        background: linear-gradient(135deg, var(--bg1), var(--bg2));
+        color: var(--text);
         padding: 40px 20px;
-        margin:0; 
+        margin: 0;
         text-align: -webkit-center;
     }
 
-    .cover::before{
-        content:'';
-        position:fixed;
-        inset:0;
-        background-image:url('images/foradacerca.jpg');
-        background-size:cover;
-        background-position:center;
+    .cover::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url('images/foradacerca.jpg');
+        background-size: cover;
+        background-position: center;
         filter: blur(10px) saturate(1.05) contrast(0.95);
-        opacity:0.9;
-        transform:scale(1.02);
-        z-index:-2;
-        transition:opacity 600ms ease, filter 600ms ease;
+        opacity: 0.9;
+        transform: scale(1.02);
+        z-index: -2;
+        transition: opacity 600ms ease, filter 600ms ease;
     }
 
-    .cover::after{
-        content:'';
-        position:fixed;
-        inset:0;
-        background: linear-gradient(120deg, rgba(var(--r),var(--g),var(--b),0.45), rgba(10,10,10,0.45));
+    .cover::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(var(--r), var(--g), var(--b), 0.45), rgba(10, 10, 10, 0.45));
         mix-blend-mode: multiply;
-        z-index:-1;
+        z-index: -1;
         transition: background 600ms ease;
     }
 
     .container {
         display: flex;
-        flex-direction: row;   /* Default: side by side */
+        flex-direction: row;
+        /* Default: side by side */
     }
 
-    .activity{
-        max-width: 1000px; 
+    .activity {
+        max-width: 1000px;
         background-color: silver;
-        margin: 0; 
+        margin: 0;
         opacity: 0.8;
-        color: black; 
+        color: black;
         text-align: left;
         padding: 20px;
-        gap: 15px; 
+        gap: 15px;
+    }
+
+    footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+    }
+
+    footer h3 {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 0.5rem;
+        font-weight: normal;
+    }
+
+    .site-map {
+        list-style: none;
+        padding: 0;
+    }
+
+    .site-map li {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+
+    .site-map a {
+        color: rgba(255, 255, 255, 0.5);
+        /* softer color */
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: normal;
+    }
+
+    .site-map a:hover {
+        text-decoration: underline;
+        color: rgba(255, 255, 255, 0.7);
+        /* slightly brighter on hover */
     }
 
     /* Mobile-friendly adjustment */
     @media (max-width: 600px) {
         .container {
-        flex-direction: column; /* Stack vertically */
+            flex-direction: column;
+            /* Stack vertically */
         }
+
         .spacer {
-            display: none; /* Hide spacer on small screens */
+            display: none;
+            /* Hide spacer on small screens */
         }
     }
-
